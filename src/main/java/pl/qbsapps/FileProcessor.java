@@ -10,6 +10,10 @@ public class FileProcessor {
         Path path = Paths.get(filePath);
         String data = null;
 
+        if (!filePath.substring(filePath.lastIndexOf(".")).equals(".txt")) {
+            return 0;
+        }
+
         try {
             data = new String(Files.readAllBytes(path));
         } catch (IOException e) {
